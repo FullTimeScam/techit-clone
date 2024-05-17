@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import TopBanner from "./components/TopBanner";
+import Header from "./components/Header";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -13,8 +14,11 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-pretendard">
-      {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
+    <div>
+      <div className="font-pretendard">
+        {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
+      </div>
+      <Header />
     </div>
   );
 };

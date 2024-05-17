@@ -4,16 +4,6 @@
 
 @layer base {
   @font-face {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/fonts/Roboto.woff2) format("woff2");
-  }
-}
-
-@layer base {
-  @font-face {
     font-family: "Pretendard";
     font-weight: 900;
     font-display: swap;
@@ -83,5 +73,11 @@
     font-display: swap;
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff")
       format("woff");
+  }
+}
+
+@layer components {
+  .nav-button-style {
+    @apply px-4 py-5 font-semibold text-Techit_gray-300;
   }
 }

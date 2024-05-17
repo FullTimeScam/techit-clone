@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        Techit_orange: "rgb(255,119,17)",
+        Techit_orange: "#FF7711",
+        Techit_gray: { 100: "#e5e5e5", 200: "#737373", 300: "#222222" },
       },
     },
     fontFamily: {
