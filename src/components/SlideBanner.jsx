@@ -1,7 +1,7 @@
 // import React from "react"; 기본 임포트라도 빼도 됨
 import Slider from "react-slick";
 import SlideBannerCard from "./SlideBannerCard";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SlideBannerData = [
   {
@@ -51,18 +51,35 @@ const SlideBannerData = [
 ];
 
 const SlideBanner = () => {
+  const [page, setPage] = useState(0);
+
   const sliderRef = useRef();
   // useRef에서 얻은 값을 콘솔로 찍어서 버튼에 쓰일 값들 추출함
+
   const onClickNext = () => {
     sliderRef.current.slickNext();
+    getCurrentPage();
   };
   const onClickPrev = () => {
     sliderRef.current.slickPrev();
+    getCurrentPage();
+  };
+
+  const getCurrentPage = () => {
+    setPage(sliderRef.current.innerSlider.state.currentSlide);
   };
 
   useEffect(() => {
     console.log(sliderRef);
-  });
+
+    setPage(sliderRef.current.innerSlider.state.currentSlide);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {}, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative">
@@ -70,11 +87,11 @@ const SlideBanner = () => {
         ref={sliderRef}
         dots={false}
         infinite={true}
-        speed={5000}
+        speed={500}
         slidesToShow={1}
         slidesToScroll={1}
         fade={true}
-        autoplay
+        // autoplay={1}
         autoplaySpeed={500}
         arrows={false}
         // className="border-red-100 bg-red-100"
@@ -91,7 +108,7 @@ const SlideBanner = () => {
       </Slider>
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full bg-red-100 px-6">
         <div className="text-white bg-black bg-opacity-30 flex w-fit rounded-full gap-2 px-3 py-[5px]">
-          <div>1 / 8</div>
+          <div>{page + 1} / 8</div>
           <button onClick={onClickPrev}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
