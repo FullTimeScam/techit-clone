@@ -1,4 +1,5 @@
 import kdtData from "../data/kdtData.json";
+import KdtCard from "./KdtCard";
 
 const KdtSection = () => {
   return (
@@ -28,35 +29,9 @@ const KdtSection = () => {
           </svg>
         </button>
       </div>
-      <ul className="grid grid-cols-4 justify-items-center gap-6 mt-10">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-6 mt-10">
         {kdtData.map((v, i) => (
-          <li key={i} className="w-[290px] h-[416px]">
-            <div className="overflow-hidden rounded-lg">
-              <img
-                className="rounded-lg hover:scale-110 duration-300"
-                src={`/images/kdts/${v.image}.webp`}
-                alt={v.title}
-              />
-            </div>
-            <div
-              className={`${
-                v["d-day"] === "ing"
-                  ? "text-[#1d4ed8] border-[#1d4ed8]"
-                  : v["d-day"] === "alarm"
-                  ? "text-[#059669] border-[#059669]"
-                  : "text-[#3f3f46] border-[#3f3f46]"
-              }mt-4 border text-sm font-semibold py-1 px-2 rounded w-fit`}
-            >
-              {v["d-day"] === "ing"
-                ? "모집중"
-                : v["d-day"] === "alarm"
-                ? "사전알림신청"
-                : "모집마감"}
-            </div>
-            <div className="text-xl font-semibold mb-2 mt-4">{v.title}</div>
-            <div className="text-lg">{v.description}</div>
-            <div className="text-Techit_gray-150 mt-4">{v.period}</div>
-          </li>
+          <KdtCard key={i} kdtData={v} />
         ))}
       </ul>
     </section>
