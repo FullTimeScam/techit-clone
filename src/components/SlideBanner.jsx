@@ -87,11 +87,11 @@ const SlideBanner = () => {
         ref={sliderRef}
         dots={false}
         infinite={true}
-        speed={500}
+        speed={150}
         slidesToShow={1}
         slidesToScroll={1}
         fade={true}
-        // autoplay={1}
+        autoplay={1}
         autoplaySpeed={500}
         arrows={false}
         // className="border-red-100 bg-red-100"
@@ -106,7 +106,7 @@ const SlideBanner = () => {
           />
         ))}
       </Slider>
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full bg-red-100 px-6">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full px-6">
         <div className="text-white bg-black bg-opacity-30 flex w-fit rounded-full gap-2 px-3 py-[5px]">
           <div>{page + 1} / 8</div>
           <button onClick={onClickPrev}>

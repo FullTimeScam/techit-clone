@@ -3,6 +3,7 @@ import TopBanner from "./components/TopBanner";
 import Header from "./components/Header";
 import SlideBannerCard from "./components/SlideBannerCard";
 import SlideBanner from "./components/SlideBanner";
+import KdtSection from "./components/KdtSection";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -16,12 +17,11 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <div className="font-pretendard">
-        {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
-        <Header />
-      </div>
+    <div className="font-pretendard">
+      {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
+      <Header />
       <SlideBanner />
+      <KdtSection />
     </div>
   );
 };
