@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TopBanner from "./components/TopBanner";
 import Header from "./components/Header";
 import SlideBanner from "./components/SlideBanner";
+import SimpleSlider from "./components/SimpleSlider";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -21,6 +22,7 @@ const App = () => {
         <Header />
         <SlideBanner />
       </div>
+      <SimpleSlider />
     </div>
   );
 };
