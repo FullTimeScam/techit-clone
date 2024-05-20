@@ -36,7 +36,9 @@ const KdtSection = () => {
               src={`/images/kdts/${v.image}.webp`}
               alt={v.title}
             />
-            <div className="mt-4">모집중</div>
+            <div className="mt-4 txxt-[#1d4ed8] text-sm font-semibold border border-[#1d4ed8] py-1 px-2 rounded w-fit">
+              모집중
+            </div>
             {v.title}
           </li>
         ))}
