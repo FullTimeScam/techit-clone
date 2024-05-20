@@ -87,7 +87,7 @@ const SlideBanner = () => {
         ref={sliderRef}
         dots={false}
         infinite={true}
-        speed={150}
+        speed={50}
         slidesToShow={1}
         slidesToScroll={1}
         fade={true}
