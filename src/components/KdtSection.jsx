@@ -30,16 +30,32 @@ const KdtSection = () => {
       </div>
       <ul className="grid grid-cols-4 justify-items-center gap-6 mt-10">
         {kdtData.map((v, i) => (
-          <li key={i} className="bg-red-100 w-[290px] h-[400px]">
-            <img
-              className="rounded-lg"
-              src={`/images/kdts/${v.image}.webp`}
-              alt={v.title}
-            />
-            <div className="mt-4 txxt-[#1d4ed8] text-sm font-semibold border border-[#1d4ed8] py-1 px-2 rounded w-fit">
-              모집중
+          <li key={i} className="w-[290px] h-[416px]">
+            <div className="overflow-hidden rounded-lg">
+              <img
+                className="rounded-lg hover:scale-110 duration-300"
+                src={`/images/kdts/${v.image}.webp`}
+                alt={v.title}
+              />
             </div>
-            {v.title}
+            <div
+              className={`${
+                v["d-day"] === "ing"
+                  ? "text-[#1d4ed8] border-[#1d4ed8]"
+                  : v["d-day"] === "alarm"
+                  ? "text-[#059669] border-[#059669]"
+                  : "text-[#3f3f46] border-[#3f3f46]"
+              }mt-4 border text-sm font-semibold py-1 px-2 rounded w-fit`}
+            >
+              {v["d-day"] === "ing"
+                ? "모집중"
+                : v["d-day"] === "alarm"
+                ? "사전알림신청"
+                : "모집마감"}
+            </div>
+            <div className="text-xl font-semibold mb-2 mt-4">{v.title}</div>
+            <div className="text-lg">{v.description}</div>
+            <div className="text-Techit_gray-150 mt-4">{v.period}</div>
           </li>
         ))}
       </ul>
