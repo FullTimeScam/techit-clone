@@ -76,7 +76,9 @@ const SlideBanner = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {}, 1000);
+    const interval = setInterval(() => {
+      getCurrentPage();
+    }, 250);
 
     return () => clearInterval(interval);
   }, []);
@@ -87,11 +89,11 @@ const SlideBanner = () => {
         ref={sliderRef}
         dots={false}
         infinite={true}
-        speed={50}
+        speed={500}
         slidesToShow={1}
         slidesToScroll={1}
         fade={true}
-        autoplay={1}
+        autoplay={true}
         autoplaySpeed={500}
         arrows={false}
         // className="border-red-100 bg-red-100"
