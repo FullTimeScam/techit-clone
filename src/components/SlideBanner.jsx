@@ -65,15 +65,16 @@ const SlideBanner = () => {
   });
 
   return (
-    <div>
+    <div className="relative">
       <Slider
         ref={sliderRef}
         dots={false}
         infinite={true}
-        speed={500}
+        speed={5000}
         slidesToShow={1}
         slidesToScroll={1}
         fade={true}
+        autoplay
         autoplaySpeed={500}
         arrows={false}
         // className="border-red-100 bg-red-100"
@@ -88,40 +89,42 @@ const SlideBanner = () => {
           />
         ))}
       </Slider>
-      <div className="text-white bg-black bg-opacity-30 flex w-fit rounded-full gap-2 px-3 py-[5px]">
-        <div>1 / 8</div>
-        <button onClick={onClickPrev}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M15 19l-7-7 7-7"
-            ></path>
-          </svg>
-        </button>
-        <button onClick={onClickNext}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5l7 7-7 7"
-            ></path>
-          </svg>
-        </button>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full bg-red-100 px-6">
+        <div className="text-white bg-black bg-opacity-30 flex w-fit rounded-full gap-2 px-3 py-[5px]">
+          <div>1 / 8</div>
+          <button onClick={onClickPrev}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+          <button onClick={onClickNext}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );
