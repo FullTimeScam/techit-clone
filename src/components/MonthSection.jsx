@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import monthData from "../data/monthData.json";
+import MonthCard from "./MonthCard";
 
 const MonthSection = () => {
   const [currentMonthData, setCurrentMonthData] = useState(monthData[0]);
@@ -65,6 +66,20 @@ const MonthSection = () => {
           </svg>
         </button>
       </div>
+      {currentMonthData[Object.keys(currentMonthData)[0]].length === 0 ? (
+        <div className="flex flex-col items-center mt-4">
+          <img src="/images/empty.png" alt="empty" />
+          <div className="mt-3 text-Techit_gray-200">
+            해당 달에는 수강 가능한 클래스가 없습니다.
+          </div>
+        </div>
+      ) : (
+        <ul className="grid grid-cols-2 mt-4 gap-6 justify-items-center">
+          {currentMonthData[Object.keys(currentMonthData)[0]].map((v, i) => (
+            <MonthCard key={i} cardData={v} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
