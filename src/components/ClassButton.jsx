@@ -1,21 +1,22 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const ClassButton = ({ name, classCardComps, setClassCardComps }) => {
+const ClassButton = ({ classData, classCardComps, setClassCardComps }) => {
   const [isClicked, setIsClicked] = useState();
 
   const onClickClass = () => {
     setIsClicked(!isClicked);
   };
+
   useEffect(() => {
     if (isClicked) {
-      setClassCardComps([...classCardComps, name]);
+      setClassCardComps([...classCardComps, classData]);
     } else {
       const temp = classCardComps.filter((v) => {
-        if (v !== name) {
+        if (v.name !== classData.name) {
           return v;
         }
       });
+
       setClassCardComps(temp);
     }
   }, [isClicked]);
@@ -29,7 +30,7 @@ const ClassButton = ({ name, classCardComps, setClassCardComps }) => {
       } px-3 py-2 text-lg border rounded-md`}
       onClick={onClickClass}
     >
-      {name}
+      {classData.name}
     </button>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import TitleBar from "./TitleBar";
 import ClassButton from "./ClassButton.jsx";
 import ClassCard from "./ClassCard.jsx";
+import classData from "../data/classData.json";
 
 const ScheduleData = [
   { name: "프론트엔드" },
@@ -52,18 +53,30 @@ const ScheduleSection = () => {
       </h6>
       <div className="border border-Techit_gray-100 rounded-lg p-6 flex flex-wrap gap-[10px]">
         {/*flex-wrap을 하면 요소들이 찌그러지지 않고 줄바꿈이 됨*/}
-        {ScheduleData.map((v, i) => (
+        {classData.map((v, i) => (
           <ClassButton
             key={i}
-            name={v.name}
+            classData={classData}
             classCardComps={classCardComps}
             setClassCardComps={setClassCardComps}
           />
         ))}
       </div>
-      <ul>
+      <ul className="grid grid-cols-2 gap-6 mt-6">
         {classCardComps.map((v, i) => (
-          <li key={v + i}>{v}</li>
+          <li
+            className="border border-Techit_gray-100 rounded-lg max-w-[604px] w-full"
+            key={v + i}
+          >
+            <ClassCard
+              name={v.name}
+              description={v.description}
+              image={v.image}
+              bgColor={v.bgColor}
+              alarm={v.alarm}
+            />
+            {v}
+          </li>
         ))}
       </ul>
       <ul>

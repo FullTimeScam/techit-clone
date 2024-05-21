@@ -1,15 +1,45 @@
-const ClassCard = () => {
+const ClassCard = ({ bgColor, name, description, image, alarm }) => {
   return (
-    <li className="border border-Techit_gray-100 rounded-lg max-w-[604px] w-full">
-      <div className="bg-[#e5f4ff] flex justify-between rounded-t-lg px-6 py-4">
+    <li>
+      <div
+        className={`${
+          name === "프론트엔드"
+            ? "bg-[#e5f4ff]"
+            : name === "백엔드 : Java"
+            ? "bg-[#ebf7eb]"
+            : name === "백엔드 : Python"
+            ? "bg-[#ebf7eb]"
+            : name === "앱스쿨 : iOS"
+            ? "bg-[#e9e5ff]"
+            : name === "AI 스쿨"
+            ? "bg-[#e5efff]"
+            : name === "앱스쿨 : Android"
+            ? "bg-[#e9e5ff]"
+            : name === "데이터 분석"
+            ? "bg-[#ccfbf1]"
+            : name === "디자인"
+            ? "bg-[#fce8e6]"
+            : name === "블록체인"
+            ? "bg-[#f7e3fc]"
+            : name === "스타트업 스테이션"
+            ? "bg-[#fff3eb]"
+            : name === "프론트엔드 심화"
+            ? "bg-[#e5f4ff]"
+            : name === "백엔드 심화" && "bg-[#ebf7eb]"
+        } flex justify-between rounded-t-lg px-6 py-4`}
+      >
         <div className="flex flex-col justify-center">
-          <h3 className="text-xl font-bold">프론트엔드</h3>
-          <h5 className="text-Techit_gray-200">기초가 탄탄한 개발자로 성장</h5>
+          <h3 className="text-xl font-bold">{name}</h3>
+          <h5 className="text-Techit_gray-200">{description}</h5>
         </div>
-        <img src="../public/images/class/frontend.png" alt="frontend" />
+        <img
+          className="w-[126px]"
+          src={`/images/class/${image}.png`}
+          alt="class Images"
+        />
       </div>
       <div className="flex justify-between mt-5 mb-3 px-6">
-        <div className="font-bold">11기 - 사전알림</div>
+        <div className="font-bold">{alarm}</div>
         <button className="flex items-center">
           사전알림신청
           <svg
