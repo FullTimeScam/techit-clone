@@ -1,6 +1,6 @@
 const ClassCard = ({ bgColor, name, description, image, alarm }) => {
   return (
-    <li>
+    <>
       <div
         className={`${
           name === "프론트엔드"
@@ -59,7 +59,7 @@ const ClassCard = ({ bgColor, name, description, image, alarm }) => {
           </svg>
         </button>
       </div>
-    </li>
+    </>
   );
 };
 
