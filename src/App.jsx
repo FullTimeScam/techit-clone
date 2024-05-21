@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-pretendard">
+    <div className="font-pretendard text-Techit_gray-300 mb-96">
       {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
       <Header />
       <SlideBanner />
