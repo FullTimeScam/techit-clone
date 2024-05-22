@@ -83,4 +83,7 @@
   .nav-button-style {
     @apply px-4 py-5 font-semibold text-Techit_gray-300;
   }
+  .card-tag-style {
+    @apply bg-Techit_gray-50 text-Techit_gray-200 px-1 py-[2px] rounded-md text-sm;
+  }
 }
