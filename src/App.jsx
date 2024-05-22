@@ -5,6 +5,7 @@ import SlideBannerCard from "./components/SlideBannerCard";
 import SlideBanner from "./components/SlideBanner";
 import KdtSection from "./components/KdtSection";
 import ScheduleSection from "./components/ScheduleSection";
+import StripBanner from "./components/StripBanner";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -24,6 +25,7 @@ const App = () => {
       <SlideBanner />
       <KdtSection />
       <ScheduleSection />
+      <StripBanner />
     </div>
   );
 };
