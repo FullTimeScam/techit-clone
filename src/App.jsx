@@ -7,6 +7,7 @@ import KdtSection from "./components/KdtSection";
 import ScheduleSection from "./components/ScheduleSection";
 import StripBanner from "./components/StripBanner";
 import OnboardingSection from "./components/OnboardingSection";
+import TrendSection from "./components/TrendSection";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
       <ScheduleSection />
       <StripBanner />
       <OnboardingSection />
+      <TrendSection />
     </div>
   );
 };
